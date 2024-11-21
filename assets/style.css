@@ -1,0 +1,111 @@
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none; /* 기본적으로 숨김 */
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 30vh;
+  font-weight: bold;
+  z-index: 1000;
+  text-align: center;
+}
+
+body {
+  padding: 1rem;
+  font-size: 16px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  padding-bottom: 1rem;
+}
+
+header > div {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+header button {
+  background-color: black;
+  padding: 0.75rem 2rem;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+}
+
+header .selector {
+  display: flex;
+  gap: 0;
+}
+
+header .selector label:not(:last-of-type) {
+  border-right: 0;
+}
+
+header .selector label:first-of-type {
+  border-radius: 5px 0 0 5px;
+}
+
+header .selector label:last-of-type {
+  border-radius: 0 5px 5px 0;
+}
+
+header input[type="radio"] {
+  display: none;
+  appearance: unset;
+}
+
+header input[type="radio"]:checked + label {
+  background-color: royalblue;
+  color: white;
+}
+
+header input[type="radio"] + label {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+#group-container {
+  opacity: 0;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+#group-container.active {
+  opacity: 1;
+}
+
+.group {
+  flex: 1 1 auto;
+  border: 1px solid #ddd;
+  padding: 1rem 1.5rem;
+}
+
+.group ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+.group h2 {
+  margin: 0 0 10px;
+  color: #434649;
+  font-size: 20px;
+}
