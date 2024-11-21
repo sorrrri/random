@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 #loading {
   position: fixed;
   top: 0;
@@ -19,6 +23,11 @@ body {
   padding: 1rem;
   margin: 0;
   font-size: 16px;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  box-sizing: border-box;
 }
 
 header {
@@ -31,10 +40,16 @@ header {
   padding-bottom: 1rem;
 }
 
+header h1 {
+  margin: 0;
+}
+
 header > div {
+  flex: 1 1 auto;
   display: flex;
   align-items: center;
   gap: 2rem;
+  justify-content: flex-end;
 }
 
 header button {
@@ -81,20 +96,31 @@ header input[type="radio"] + label {
 }
 
 #group-container {
-  opacity: 0;
+  flex: 1 1 auto;
   display: flex;
-  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
 #group-container.active {
-  opacity: 1;
+  flex: 0 0 auto;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .group {
   flex: 1 1 auto;
+  width: calc(20% - 1rem);
+  max-width: 20%;
   border: 1px solid #ddd;
-  padding: 1rem 1.5rem;
+  padding: 1rem;
+}
+
+.group i {
+  font-style: normal;
+  font-size: 24px;
 }
 
 .group ul {
@@ -104,9 +130,30 @@ header input[type="radio"] + label {
   margin: 0;
   padding: 0;
   flex-wrap: wrap;
+  font-size: 18px;
 }
 .group h2 {
   margin: 0 0 10px;
   color: #434649;
   font-size: 20px;
+}
+
+@media screen and (max-width: 640px) {
+  header input[type="radio"] + label {
+    padding: 0.5rem;
+  }
+
+  header button {
+    padding: 0.5rem 1rem;
+  }
+
+  header > div {
+    justify-content: space-between;
+  }
+
+  .group {
+    padding: 0.75rem;
+    width: 100%;
+    max-width: 100%;
+  }
 }

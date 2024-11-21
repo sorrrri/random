@@ -19,14 +19,23 @@ fetch("assets/names.json")
 
       groups.sort((a, b) => a.length - b.length);
 
+      // 이모지 배열
+      const emojis = ["🐶", "🐱", "😎", "🐰", "🦊", "💖", "🐼", "😘", "🐯", "🦁", "🌞", "🐷", "🎁", "🐵", "🐥", "🦄", "🎄", "🌺", "🎅🏼", "⛄", "🐳", "🦥", "🚀", "🐲", "😻"];
+
       const groupContainer = document.getElementById("group-container");
       groupContainer.innerHTML = "";
+
+      // 이모지 중복을 피하기 위해서 배열에서 제거
       groups.forEach((group, i) => {
         const groupElement = document.createElement("div");
         groupElement.classList.add("group");
 
+        // 랜덤 이모지 선택 후 제거
+        const randomEmojiIndex = Math.floor(Math.random() * emojis.length);
+        const randomEmoji = emojis.splice(randomEmojiIndex, 1)[0]; // 선택된 이모지를 배열에서 제거
+
         const groupTitle = document.createElement("h2");
-        groupTitle.textContent = `그룹 ${i + 1}`;
+        groupTitle.innerHTML = `<i>${randomEmoji}</i> 그룹 ${i + 1}`;
         groupElement.appendChild(groupTitle);
 
         const groupList = document.createElement("ul");
@@ -77,6 +86,6 @@ fetch("assets/names.json")
 function shuffle(arr) {
   for (let i = arr.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
+    [arr[i], arr[j]] = [arr[j], arr[i]]; // 배열 요소 교환
   }
 }
