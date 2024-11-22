@@ -8,22 +8,31 @@ fetch("assets/names.json")
     });
 
     function displayGroups(activeNames, groupSize) {
-      // Shuffle the names every time we display groups
       shuffle(activeNames);
 
       const groups = [];
-      for (let i = 0; i < activeNames.length; i += groupSize) {
+      let leftoverPeople = [];
+
+      for (let i = 0; i < Math.floor(activeNames.length / groupSize) * groupSize; i += groupSize) {
         groups.push(activeNames.slice(i, i + groupSize));
       }
 
-      // Shuffle the groups
-      shuffle(groups);
+      leftoverPeople = activeNames.slice(groups.length * groupSize);
 
-      // Sort the groups by size (just in case you want to order them)
+      if (leftoverPeople.length > 0) {
+        shuffle(leftoverPeople);
+
+        leftoverPeople.forEach((person, index) => {
+          const groupIndex = index % groups.length;
+          groups[groupIndex].push(person);
+        });
+      }
+
+      shuffle(groups);
       groups.sort((a, b) => a.length - b.length);
 
       const groupContainer = document.getElementById("group-container");
-      groupContainer.innerHTML = "";
+      groupContainer.innerHTML = "";  
 
       groups.forEach((group, i) => {
         const groupElement = document.createElement("div");
@@ -81,6 +90,6 @@ fetch("assets/names.json")
 function shuffle(arr) {
   for (let i = arr.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];  // Swap elements
+    [arr[i], arr[j]] = [arr[j], arr[i]];  
   }
 }
