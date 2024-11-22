@@ -1,8 +1,6 @@
 fetch("assets/names.json")
   .then((response) => response.json())
   .then((data) => {
-    shuffle(data.active);
-
     const startButton = document.getElementById("start-btn");
     startButton.addEventListener("click", () => {
       const groupSize = parseInt(document.querySelector('input[name="team-size"]:checked').id.replace("team", ""));
@@ -10,13 +8,18 @@ fetch("assets/names.json")
     });
 
     function displayGroups(activeNames, groupSize) {
+      // Shuffle the names every time we display groups
+      shuffle(activeNames);
+
       const groups = [];
       for (let i = 0; i < activeNames.length; i += groupSize) {
         groups.push(activeNames.slice(i, i + groupSize));
       }
 
+      // Shuffle the groups
       shuffle(groups);
 
+      // Sort the groups by size (just in case you want to order them)
       groups.sort((a, b) => a.length - b.length);
 
       const groupContainer = document.getElementById("group-container");
@@ -78,6 +81,6 @@ fetch("assets/names.json")
 function shuffle(arr) {
   for (let i = arr.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
+    [arr[i], arr[j]] = [arr[j], arr[i]];  // Swap elements
   }
 }
