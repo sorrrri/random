@@ -1,5 +1,14 @@
+@font-face {
+  font-family: 'Moneygraphy-Rounded';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2411-2@1.0/Moneygraphy-Rounded.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
+  font-family: 'Moneygraphy-Rounded';
+  font-weight: 400;
 }
 
 #loading {
@@ -126,16 +135,16 @@ header input[type="radio"] + label {
 .group ul {
   display: flex;
   list-style: none;
-  gap: 1rem;
+  gap: .75rem;
   margin: 0;
   padding: 0;
   flex-wrap: wrap;
-  font-size: 18px;
+  font-size: 17px;
 }
 .group h2 {
   margin: 0 0 10px;
-  color: #434649;
-  font-size: 20px;
+  color: royalblue;
+  font-size: 18px;
 }
 
 @media screen and (max-width: 640px) {
