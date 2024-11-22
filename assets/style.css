@@ -53,6 +53,13 @@ header h1 {
   margin: 0;
 }
 
+header h1 a {
+  font-size: 18px;
+  color: black;
+  text-underline-offset: 5px;
+  margin-left: 1rem;
+}
+
 header > div {
   flex: 1 1 auto;
   display: flex;
@@ -165,4 +172,90 @@ header input[type="radio"] + label {
     width: 100%;
     max-width: 100%;
   }
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border: 1px solid ;
+  padding: 2rem;
+}
+
+.container .screen {
+  background-color: cornflowerblue;
+  color: white;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 7vh;
+}
+
+.container .screen::before {
+  content: "FRONT(SCREEN)";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .back {
+  background-color: #eee;
+  color: #434649;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .back::before {
+  content: "BACK";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .area {
+  display: flex;
+  gap: 1rem;
+}
+
+.container .floor::before {
+  content: "계단"
+}
+
+.container .floor {
+  flex: 0 0 10vw;
+  background-color: #eee;
+  color: #434649;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .seats {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.container .seats ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1rem;
+}
+
+.container .seats ul:first-of-type li {
+  background-color: #eee;
+}
+
+.container .seats li {
+  flex: 1;
+  border: 1px solid;
+  padding: 1rem 1rem;
+  text-align: center;
 }
