@@ -12,30 +12,32 @@
     </div>
 
     <header>
-      <h1>
-        랜덤 그룹 나누기
-        <a href="seats.html">좌석배치도</a>
-      </h1>
+      <div class="tabs">
+        <a class="active" href="index.html">회식장소</a>
+        <a href="seminar.html">세미나실</a>
+      </div>
       <div>
-        <div class="selector">
-          <input id="team4" type="radio" name="team-size" checked />
-          <label for="team4">4명씩</label>
-          <input id="team6" type="radio" name="team-size" />
-          <label for="team6">6명씩</label>
-          <input id="team8" type="radio" name="team-size" />
-          <label for="team8">8명씩</label>
-        </div>
         <button id="start-btn">시작</button>
       </div>
     </header>
 
-    <div id="group-container">
-      <img src="https://media2.giphy.com/media/b3nQZYG3oNLWw/giphy.webp?cid=dda24d509dun8tlm2kvlbs1rvcfpg0sehet6zc21ixezms6j&ep=v1_internal_gif_by_id&rid=giphy.webp&ct=g" alt="" />
+    <div class="pub">
+      <div class="tv">TV</div>
+      <div id="group-container">
+        <ul id="ul1"></ul>
+        <ul id="ul2"></ul>
+        <ul id="ul3"></ul>
+        <ul id="ul4"></ul>
+        <ul id="ul5"></ul>
+        <ul id="ul6"></ul>
+        <ul id="ul7"></ul>
+        <ul id="ul8"></ul>
+      </div>
     </div>
 
     <audio id="ready-audio" src="assets/ready.mp3" preload="auto"></audio>
     <audio id="yay-audio" src="assets/yay.mp3" preload="auto"></audio>
 
-    <script src="assets/script.js"></script>
+    <script src="assets/pub.js"></script>
   </body>
 </html>

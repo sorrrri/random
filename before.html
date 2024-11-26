@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>랜덤 그룹 나누기</title>
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <div id="loading">
+      <span id="countdown"></span>
+    </div>
+
+    <header>
+      <h1>
+        랜덤 그룹 나누기
+        <a href="seats.html">좌석배치도</a>
+      </h1>
+      <div>
+        <div class="selector">
+          <input id="team4" type="radio" name="team-size" checked />
+          <label for="team4">4명씩</label>
+          <input id="team6" type="radio" name="team-size" />
+          <label for="team6">6명씩</label>
+          <input id="team8" type="radio" name="team-size" />
+          <label for="team8">8명씩</label>
+        </div>
+        <button id="start-btn">시작</button>
+      </div>
+    </header>
+
+    <div id="group-container">
+      <img src="https://media2.giphy.com/media/b3nQZYG3oNLWw/giphy.webp?cid=dda24d509dun8tlm2kvlbs1rvcfpg0sehet6zc21ixezms6j&ep=v1_internal_gif_by_id&rid=giphy.webp&ct=g" alt="" />
+    </div>
+
+    <audio id="ready-audio" src="assets/ready.mp3" preload="auto"></audio>
+    <audio id="yay-audio" src="assets/yay.mp3" preload="auto"></audio>
+
+    <script src="assets/script.js"></script>
+  </body>
+</html>
