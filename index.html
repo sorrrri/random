@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>랜덤 그룹 나누기</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=groups" />
     <link rel="stylesheet" href="assets/style.css" />
+    
   </head>
   <body>
     <div id="loading">
@@ -16,24 +18,38 @@
         <a class="active" href="index.html">회식장소</a>
         <a href="seminar.html">세미나실</a>
       </div>
-      <div>
+      <div class="buttons">
+        <a href="workers.html" class="workers material-symbols-outlined">
+          groups
+        </a>
         <button id="start-btn">시작</button>
       </div>
     </header>
-
-    <div class="pub">
-      <div class="tv">TV</div>
-      <div id="group-container">
-        <ul id="ul1"></ul>
-        <ul id="ul2"></ul>
-        <ul id="ul3"></ul>
-        <ul id="ul4"></ul>
-        <ul id="ul5"></ul>
-        <ul id="ul6"></ul>
-        <ul id="ul7"></ul>
-        <ul id="ul8"></ul>
+    <main>
+      <div class="pub">
+        <aside></aside>
+        <div class="seats">
+          <div class="tv">TV</div>
+          <div id="group-container">
+            <ul id="ul1"></ul>
+            <ul id="ul2"></ul>
+            <ul id="ul3"></ul>
+            <ul id="ul4"></ul>
+            <ul id="ul5"></ul>
+            <ul id="ul6"></ul>
+            <ul id="ul7"></ul>
+            <ul id="ul8"></ul>
+            <div class="fridge">냉장고</div>
+            <div class="buffet">뷔페</div>
+          </div>
+        </div>
+        <aside>
+          <div class="door">입구</div>
+          <div class="kitchen">주방</div>
+        </aside>
       </div>
-    </div>
+    </main>
+
 
     <audio id="ready-audio" src="assets/ready.mp3" preload="auto"></audio>
     <audio id="yay-audio" src="assets/yay.mp3" preload="auto"></audio>

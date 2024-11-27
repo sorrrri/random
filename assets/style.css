@@ -11,6 +11,11 @@
   font-weight: 400;
 }
 
+a {
+  color: black;
+  text-decoration: none;
+}
+
 ul {
   padding: 0;
   margin: 0;
@@ -35,7 +40,6 @@ ul {
 }
 
 body {
-  padding: 1rem;
   margin: 0;
   font-size: 16px;
   display: flex;
@@ -46,12 +50,14 @@ body {
 }
 
 header {
+  flex: 0 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #ddd;
-  margin-bottom: 2rem;
   flex-wrap: wrap;
+  padding: 0 1rem;
+  height: 70px;
 }
 
 header .tabs {
@@ -76,7 +82,7 @@ header .tabs a::after {
   display: flex;
   position: absolute;
   bottom: 0;
-  background-color: black;
+  background-color: black;;
   transition: width 0.25s;
 }
 
@@ -104,6 +110,10 @@ header > div {
   justify-content: flex-end;
 }
 
+header .buttons {
+  gap: 1rem;
+}
+
 header button {
   background-color: black;
   padding: 0.75rem 2rem;
@@ -112,7 +122,17 @@ header button {
   border-radius: 5px;
   border: 0;
   cursor: pointer;
-  margin-bottom: 1rem;
+  margin: .75rem 0;
+}
+
+header .workers {
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 2.5rem;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 header .selector {
@@ -146,6 +166,13 @@ header input[type="radio"] + label {
   padding: 0.75rem 1rem;
   border: 1px solid #ddd;
   cursor: pointer;
+}
+
+main {
+  flex: 1 1 auto;
+  padding: 2rem 1rem;
+  display: flex;
+  max-height: calc(100vh - 70px);
 }
 
 #group-container {
@@ -189,26 +216,6 @@ header input[type="radio"] + label {
   margin: 0 0 10px;
   color: royalblue;
   font-size: 18px;
-}
-
-@media screen and (max-width: 640px) {
-  header input[type="radio"] + label {
-    padding: 0.5rem;
-  }
-
-  header button {
-    padding: 0.5rem 1rem;
-  }
-
-  header > div {
-    justify-content: space-between;
-  }
-
-  .group {
-    padding: 0.75rem;
-    width: 100%;
-    max-width: 100%;
-  }
 }
 
 .container {
@@ -297,10 +304,76 @@ header input[type="radio"] + label {
 }
 
 .pub {
+  flex: 1 1 auto;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1rem;
+  position: relative;
+  font-size: 18px;
+}
+
+.pub aside {
+  flex: 0 0 12vw;
+  position: relative;
+}
+
+.pub aside div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pub .seats {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
   align-items: center;
+  gap: 1rem;
+  position: relative;
+  height: max-content;
+}
+
+.pub .door {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: #434649;
+  color: white;
+  width: 4vw;
+  aspect-ratio: 1 / 2;
+}
+
+.pub .fridge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+  width: 5vw;
+  aspect-ratio: 2 / 1;
+  grid-column: 2 / 3;
+  grid-row: 4;
+}
+
+.pub .kitchen {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #eee;
+  width: 8vw;
+  aspect-ratio: 1 / 3;
+}
+
+.pub .buffet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column: 2 / 3;
+  grid-row: 5;
+  background-color: mediumseagreen;
+  color: white;
+  width: 100%;
+  height: 100%;
 }
 
 .pub #group-container {
@@ -311,14 +384,14 @@ header input[type="radio"] + label {
 
 .pub ul {
   display: grid;
-  grid-template-columns: repeat(8, 64px);
+  grid-template-columns: repeat(8, 70px);
   grid-template-rows: repeat(2, 1fr);
   gap: 5px;
 }
 
 .pub li {
-  width: 64px;
-  height: 36px;
+  width: 70px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -329,7 +402,7 @@ header input[type="radio"] + label {
 .pub #ul7,
 .pub #ul8 {
   display: grid;
-  grid-template-columns: repeat(6, 64px);
+  grid-template-columns: repeat(6, 70px);
   grid-template-rows: repeat(2, 1fr);
 }
 
@@ -349,4 +422,41 @@ header input[type="radio"] + label {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 1rem;
+}
+
+main article {
+  flex: 1;
+}
+
+main article ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+main article:first-of-type {
+  flex: 2;
+}
+
+
+@media screen and (max-width: 640px) {
+  header input[type="radio"] + label {
+    padding: 0.5rem;
+  }
+
+  header button {
+    padding: 0.5rem 1rem;
+  }
+
+  header > div {
+    justify-content: space-between;
+  }
+
+  .group {
+    padding: 0.75rem;
+    width: 100%;
+    max-width: 100%;
+  }
 }

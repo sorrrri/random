@@ -93,7 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const loading = document.getElementById("loading");
     loading.style.display = "none";
-    groupContainer.classList.add("active");
   };
 
   const shuffle = (arr) => {
