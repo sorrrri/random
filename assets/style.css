@@ -82,7 +82,7 @@ header .tabs a::after {
   display: flex;
   position: absolute;
   bottom: 0;
-  background-color: black;;
+  background-color: black;
   transition: width 0.25s;
 }
 
@@ -122,7 +122,7 @@ header button {
   border-radius: 5px;
   border: 0;
   cursor: pointer;
-  margin: .75rem 0;
+  margin: 0.75rem 0;
 }
 
 header .workers {
@@ -311,7 +311,7 @@ main {
   gap: 2rem;
   padding: 1rem;
   position: relative;
-  font-size: 18px;
+  font-size: clamp(16px, 1.5vw, 17px);
 }
 
 .pub aside {
@@ -326,6 +326,7 @@ main {
 }
 
 .pub .seats {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -377,6 +378,7 @@ main {
 }
 
 .pub #group-container {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(5, 1fr);
@@ -384,13 +386,12 @@ main {
 
 .pub ul {
   display: grid;
-  grid-template-columns: repeat(8, 70px);
+  grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 5px;
 }
 
 .pub li {
-  width: 70px;
   height: 40px;
   display: flex;
   justify-content: center;
@@ -402,13 +403,13 @@ main {
 .pub #ul7,
 .pub #ul8 {
   display: grid;
-  grid-template-columns: repeat(6, 70px);
+  grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(2, 1fr);
 }
 
 #ul8 {
-  grid-column: 1 / -1; /* 첫 번째 열부터 마지막 열까지 */
-  grid-row: 5; /* 5행에 위치 */
+  grid-column: 1 / 2;
+  grid-row: 5;
 }
 
 .pub .hidden {
@@ -439,7 +440,6 @@ main article ul {
 main article:first-of-type {
   flex: 2;
 }
-
 
 @media screen and (max-width: 640px) {
   header input[type="radio"] + label {
