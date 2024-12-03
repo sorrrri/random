@@ -305,10 +305,12 @@ main {
 .pub {
   display: flex;
   justify-content: space-between;
-  gap: 5vw;
+  gap: 3vw;
   padding: 1rem;
   position: relative;
   font-size: 15px;
+  width: 100%;
+  max-width: 1640px;
 }
 
 .pub aside {
@@ -416,7 +418,7 @@ main {
   background-color: #eee;
 }
 
-.pub .tv {
+.pub .seats .tv {
   background-color: dodgerblue;
   color: white;
   padding: .5rem 3rem;
@@ -424,6 +426,19 @@ main {
   align-items: center;
   justify-content: center;
   margin-left: -9.5rem;
+}
+
+.pub aside .tv {
+  background-color: dodgerblue;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  bottom: 10vh;
+  width: 35px;
+  aspect-ratio: 1 / 3;
 }
 
 main article {
@@ -443,7 +458,6 @@ main article:first-of-type {
 
 .group-container {
   width: 100%;
-  max-width: 1200px;
   display: flex;
   justify-content: space-between;
   gap: 5vw;
