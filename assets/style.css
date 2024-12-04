@@ -311,8 +311,13 @@ main {
   gap: 1rem;
 }
 
+.container .seats ul:first-of-type {
+  margin-top: -65px;
+}
+
 .container .seats ul:first-of-type li {
   background-color: #eee;
+  border: 0;
 }
 
 .container .seats li {
