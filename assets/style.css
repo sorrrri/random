@@ -224,6 +224,27 @@ main {
   padding: 2rem;
 }
 
+.container .speak {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #434649;
+  width: 7rem;
+  aspect-ratio: 1 ;
+  color: white;
+}
+
+.container .door {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #434649;
+  width: 3vw;
+  aspect-ratio: 1 / 2 ;
+  color: white;
+
+}
+
 .container .screen {
   background-color: cornflowerblue;
   color: white;
@@ -231,7 +252,6 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 7vh;
 }
 
 .container .screen::before {
@@ -260,6 +280,7 @@ main {
 .container .area {
   display: flex;
   gap: 1rem;
+  justify-content: space-between;
 }
 
 .container .floor::before {
