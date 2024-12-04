@@ -221,7 +221,6 @@ main {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  border: 1px solid;
   padding: 2rem;
 }
 
@@ -300,6 +299,7 @@ main {
   border: 1px solid;
   padding: 1rem 1rem;
   text-align: center;
+  line-height: 1;
 }
 
 .pub {
