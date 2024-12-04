@@ -246,6 +246,8 @@ main {
 }
 
 .container .screen {
+  width: 60%;
+  margin: 0 auto;
   background-color: cornflowerblue;
   color: white;
   height: 45px;
