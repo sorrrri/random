@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const displayGroups = () => {
 
     const people = document.querySelectorAll("[data-random]")
+    console.log("랜덤 돌릴 인원수", people.length)
     const shuffledNames = shuffle(activeNames.slice());
 
 
